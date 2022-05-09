@@ -1,0 +1,35 @@
+/* додавання власного стилю для малюнків */
+.mediaFiles {
+  width: 150px;
+  height: 150px;
+  background-color: #ffffcc;
+  border: 2px solid silver;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 5px;
+  transition: transform 500ms;
+}
+/* збільшення при наведенні */
+.mediaFiles:hover{
+  transform: scale(1.05);
+
+}
+.mediaFile {
+  width: 144px;
+  height: 84px;
+  border: 2px solid silver;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.cobzar{
+  background-color: #FDF5EC;
+  border: 2px solid silver;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* додавання власного стилю для малюнків завершено */
