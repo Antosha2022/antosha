@@ -1,6 +1,5 @@
 <?php
 
-
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -49,7 +48,8 @@ Route::get('/contact/all',
 Route::post('/contact/submit',
 'ContactController@FunctionSubmit')->name('contact-form');
 
-// вірші Кобзаря
+// вірші Кобзаря - це функціонал для наповнення бази даних рядками віршів, бо не захотілося йти шляхом просто додавання через PHP MyAdmin
+// це дозволило вносити текст в базу даних через просту форму з можливістю подальшого редагування чи видалення, не заходячи в PHP MyAdmin
 Route::get('/cobzar', function (){
   return view('cobzar');
  })->name('cobzar');
@@ -79,4 +79,4 @@ Route::get('/cobzar', function (){
  //це сервісна сторінка для можливості редагування віршів у базі даних
  // Route::get('/cobzar/all',
  // 'CobzarController@FunctionRandomVirsh')->name('cobzar');
- //
+ 
