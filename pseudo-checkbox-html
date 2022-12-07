@@ -1,0 +1,12 @@
+ <div class="row" style="height: 70px;">
+                                        <div class="col-2" style=" text-align: right">
+                                            <f:image image="{resource}" alt="" width="50" />
+                                        </div>
+                                        <div class="col-3" style="position: relative; padding-top: -30px; justify-content: flex-start">
+                                            <label class="custom-checkbox">
+                                                <h:form.multiupload.delete property="image" value="{resource}" style="width: 20px"/><span>Delete</span></label><br>
+                                            <label>
+                                                <f:form.radio name="setMainImage" value="0" property="main.image" checked="{resource}== main.image" style="width: 20px"/>Hauptbild</label>
+                                        </div>
+                                        <br>
+                                    </div>
