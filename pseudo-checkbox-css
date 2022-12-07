@@ -1,0 +1,34 @@
+/*custom checkbox with opposite value for DELETE IMAGE*/
+/* input for type="checkbox" */
+.custom-checkbox>input {
+    position: absolute;
+    opacity: 0;
+}
+/* label for .custom-checkbox */
+.custom-checkbox>span {
+    display: inline-flex;
+    align-items: center;
+    user-select: revert;
+}
+/* pseudo element ::before in label */
+.custom-checkbox>span::before {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    background-color: #dd001a;
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 0.25em;
+    margin-left: 0.2em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+/* checked */
+.custom-checkbox>input:checked+span::before {
+    background-color: #ffffff;
+}
