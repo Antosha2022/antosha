@@ -1,0 +1,55 @@
+
+				<div class="select-meat-wrapper">
+					<div class="container" id="hide-meal-type">
+						<span>Nur für Als Menübild verwenden!</span>
+					</div>
+					<div class="select meat" data-id="{component.uid}">
+						<div class="selected">
+							<f:if condition="{component.animalMeat}">
+								<f:then>
+									<f:for each="{animalMeat}" as="meat">
+										<f:if condition="{meat.uid} == {component.animalMeat.uid}">
+											<f:form.textfield name="name" value="{meat.title}" placeholder="{f:translate(key: 'tx_bssmenuplanner_domain_model_menu.if_animal_meat')}"/>
+										</f:if>
+									</f:for>
+								</f:then>
+								<f:else>
+									<f:form.textfield name="name" placeholder="{f:translate(key: 'tx_bssmenuplanner_domain_model_menu.if_animal_meat')}"/>
+								</f:else>
+							</f:if>
+							<f:form.textfield name="id" type="hidden"/>
+<!--							<f:for each="{component.componentImages}" as="image">-->
+<!--								<f:if condition="{image.componentImageTags} == 1">-->
+<!--									<f:then>-->
+
+							<div>
+								<i class="bi bi-chevron-down"></i>
+								<i class="bi bi-chevron-up hide"></i>
+							</div>
+
+						</div>
+						<ul>
+							<li value="0" data-action="{f:uri.action(action:'selectAnimalMeat')}" class="first">
+								<f:translate key="tx_bssmenuplanner_domain_model_menu.no_meat"/>
+							</li>
+							<f:for each="{animalMeat}" as="meat">
+								<f:if condition="{meat.uid} == {component.animalMeat.uid}">
+									<f:then>
+										<li value="{meat.uid}" data-action="{f:uri.action(action:'selectAnimalMeat')}" class="{f:if(condition: '{iterator.isFirst}', then: 'first', else: '')} active">{meat.title}</li>
+									</f:then>
+									<f:else>
+										<li value="{meat.uid}" data-action="{f:uri.action(action:'selectAnimalMeat')}" class="{f:if(condition: '{iterator.isFirst}', then: 'first', else: '')}">{meat.title}</li>
+									</f:else>
+								</f:if>
+							</f:for>
+						</ul>
+					</div>
+				</div>
+<!--						</f:then>-->
+<!--					<f:else>-->
+<!--						<div style="top: -20px; text-align: center">-->
+<!--							<span>Nur für Als Menübild verwenden!</span>-->
+<!--						</div>-->
+<!--					</f:else>-->
+<!--					</f:if>-->
+<!--				</f:for>-->
